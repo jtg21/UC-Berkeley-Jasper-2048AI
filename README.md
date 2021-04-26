@@ -15,6 +15,10 @@ Then, in the directory, run <code> py AI_game.py </code> to test your AI perform
 
 The GUI will automatically pops up, and AI will start search.
 
+## Perfomance
+
+So far the AI is a bit inconsistant but I can win and attain a pretty high score. So far the largest tiles I have observed on one board state have been 2048, 1024, 512, and 256, and 128. So the AI near made it to 4096. From what I've observed, the AI occassionally makes some "bad" moves. In some games the moves are so unfavorable that the AI cannot recover and quickly loses. Much of the perfomance variablility is due to this unpredictable behavior.
+
 ## AI and Descision making
 
 My verision of 2048 has two playable version: AI and single player. The AI verision relies on an iteratively deepening minimax tree search inorder to find the best moves.
@@ -34,6 +38,5 @@ To further enforce the corner stacking behavior, I check the board for monotinic
 ### Smoothness
 
 As the tiles on the board increase in value they tend to drift apart from each other. This usually results in the isolation of small tiles which makes it difficult to combine tiles. Smoothness accounts for the difference between adjacent tiles such that board with adjacent tiles of similar value are highly valued. Especially as the tile values increase, the penalty for non adjacent tiles becomes higher. 
-
 
 
