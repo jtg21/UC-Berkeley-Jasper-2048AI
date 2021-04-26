@@ -1,6 +1,6 @@
 # 2048-AI-Starter-Code
 
-This is the starter code for 2048 AI project hosted by UC Berkeley IEEE Student Branch
+This is my implementation of the 2048 AI project hosted by UC Berkeley IEEE Student Branch
 1. User_game: The traditional one-human-player 2048 game
 2. AI_game: Run one-AI-player 2048 game
 3. AI_Move: the basic tile move/merge logic based on 2048 rules
@@ -14,4 +14,26 @@ This AI is built based on the 2048 pypi package made by user 'quantum'. If you d
 Then, in the directory, run <code> py AI_game.py </code> to test your AI performance.
 
 The GUI will automatically pops up, and AI will start search.
+
+## AI and Descision making
+
+My verision of 2048 has two playable version: AI and single player. The AI verision relies on an iteratively deepening minimax tree search inorder to find the best moves.
+
+## Heuristics
+
+To evalute the board state I used a weight sum of various hueristics. These heuristics include a measure of weighted patterns, monotonicity, and smoothness.
+
+### Pattern
+
+Using a preset matix of weight, I encourage the AI to choose boards states that load larger tiles into the bottom right corner. The benifit of having larger tiles in the corner is reduced game complexity (right and down) and prevention of isolated small tiles. Its important to note that the choice of the corner is arbitiary.
+
+### Monotinicity
+
+To further enforce the corner stacking behavior, I check the board for monotinicity. I call a column or row monotonic if value of the tiles are increasing from left to right and from top to bottom. This serves to 
+
+### Smoothness
+
+As the tiles on the board increase in value they tend to drift apart from each other. This usually results in the isolation of small tiles which makes it difficult to combine tiles. Smoothness accounts for the difference between adjacent tiles such that board with adjacent tiles of similar value are highly valued. Especially as the tile values increase, the penalty for non adjacent tiles becomes higher. 
+
+
 
